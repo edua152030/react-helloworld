@@ -1,24 +1,35 @@
-import React from 'react';
+
+
+import React, { ChangeEvent } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import CadastroCliente from './Component/CadastroCliente'
+
 function App() {
+
+  let nomeCliente: string = ''
+  
+  const txtNomeOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    nomeCliente = event.target.value
+  }
+
+  const txtNomeClick = () =>{
+    alert(nomeCliente)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+    <CadastroCliente />
+    {/*comentario em jsx*/}
+
+    <label>Nome</label>
+    <input type='text' id='txtNome' onChange={txtNomeOnChange} />
+    <input type='button' value='Exibir Nome' onClick={txtNomeClick}/>
+  
+    
+
     </div>
   );
 }
