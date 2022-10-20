@@ -1,34 +1,24 @@
-
-
-import React, { ChangeEvent } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-import CadastroCliente from './Component/CadastroCliente'
+import CadastroCliente from './componentes/CadastroCliente'
 
 function App() {
 
-  let nomeCliente: string = ''
-  
-  const txtNomeOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    nomeCliente = event.target.value
+  const empresa: string = "Cursos REACT"
+
+  const rsCliente = {
+    nome: 'Zanatta',
+    endereco: 'Av. 21 de Abril 504'
   }
 
-  const txtNomeClick = () =>{
-    alert(nomeCliente)
-  }
 
   return (
     <div className="App">
-  
-    <CadastroCliente />
-    {/*comentario em jsx*/}
 
-    <label>Nome</label>
-    <input type='text' id='txtNome' onChange={txtNomeOnChange} />
-    <input type='button' value='Exibir Nome' onClick={txtNomeClick}/>
-  
-    
+      <h1>{empresa}</h1>
+      <CadastroCliente />
+      {/* comentarios */}
 
     </div>
   );
